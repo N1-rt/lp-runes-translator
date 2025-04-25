@@ -23,9 +23,9 @@ class Runes:
 
     # caminhos dos assets
     PATH = Path.cwd()
-    ALPHABET_PATH = os.path.join(PATH.parent, "assets/alph.txt")
-    PRIMUS_PATH = os.path.join(PATH.parent, "assets/primus.txt")
-    RUNES_PATH = os.path.join(PATH.parent, "assets/runes.txt")
+    ALPHABET_PATH = os.path.join(PATH, "assets/alph.txt")
+    PRIMUS_PATH = os.path.join(PATH, "assets/primus.txt")
+    RUNES_PATH = os.path.join(PATH, "assets/runes.txt")
 
     rune_shift = None
     for letter in open(ALPHABET_PATH, "r"):

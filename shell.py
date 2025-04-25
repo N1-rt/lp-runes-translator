@@ -2,7 +2,7 @@
 
 from os import system
 from os import path
-from objects import Runes
+from src.objects import Runes
 
 # COMMANDS
 COMMAND_SC: str = "!"

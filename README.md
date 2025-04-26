@@ -1,6 +1,6 @@
 ***OBS: This is a tool to decrypt runes from Cicada 3301 using the Gematria Primus table, 
 the project is not complete and needs improvements, this is not a professional project, 
-so don't expect much, the purpose of the project is just for my fun and programming training, 
+so don't expect much, the purpose of the project is just for my fun and training, 
 I'm just a beginner.***
 
 ![Screenshot_20250425_201957](https://github.com/user-attachments/assets/0cbe83ff-ee13-4805-86cb-f4c13629a15e)

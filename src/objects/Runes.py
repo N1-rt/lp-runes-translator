@@ -107,7 +107,7 @@ class Runes:
                 rune_atbash = Runes.alphabet[-rune_index - 1]
                 inverted_runes_text += Runes.runes[-rune_index - 1]
                 rune_atbash_translated += rune_atbash
-                print(f"Rune:{r}:{rune_index}:{Runes.alphabet[rune_index]}")
+                
             elif r.strip() == "•":
                 rune_atbash_translated += " "
                 inverted_runes_text += "•"

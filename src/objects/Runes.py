@@ -76,12 +76,13 @@ class Runes:
                     print(f"Rune({r}) not founded <:(")
             # exibindo valores para o usuario
             print("#" * 10 + " Translated Runes " + "#" * 10)
-            print(f"Original text:\n{self.runes_text}")
-            print(f"Original Translated text:\n{self.translated_text_without_shift}")
+            print("\n")
+            print(f"Original runes:\n{self.runes_text}\n")
+            print(f"Original Translated text:\n{self.translated_text_without_shift}\n")
             print(
-                f"Translated text With shift:{self.translated_text}"
+                f"Translated text With shift:\n{self.translated_text}\n"
             ) if self.shift != 0 else print("No shift included!")
-            print(f"Shift value:{self.shift}")
+            print(f"Shift value:{self.shift}\n")
         except Exception as e:
             raise e
 
@@ -107,7 +108,7 @@ class Runes:
                 rune_atbash = Runes.alphabet[-rune_index - 1]
                 inverted_runes_text += Runes.runes[-rune_index - 1]
                 rune_atbash_translated += rune_atbash
-                
+
             elif r.strip() == "•":
                 rune_atbash_translated += " "
                 inverted_runes_text += "•"
@@ -116,14 +117,14 @@ class Runes:
         self.translated_text = rune_atbash_translated
         self.runes_text = inverted_runes_text
         # exibindo valores para usuario
-        print(f"Translated atbash runes text:\n{rune_atbash_translated}")
+        print(f"Translated atbash runes text:\n{rune_atbash_translated}\n")
         print(
-            "Warning the text now is inverted,if you want to back to normal use the command again"
+            "[Warning] the text now is inverted,if you want to back to normal use the command again\n"
         )
-        print(f"Inverted Runes status:{self.inverted_runes}")
+        print(f"Inverted Runes status:{self.inverted_runes}\n")
         pass
 
     def show_entered_text(self):
         # auto-explicativo
-        print(f"entered translated text:\n{self.translated_text}")
-        print(f"entered runes:\n{self.runes_text}")
+        print(f"entered translated text:\n{self.translated_text}\n")
+        print(f"entered runes:\n{self.runes_text}\n")

@@ -78,6 +78,7 @@ try:
                             raise e
                 case "!sr":
                     # inserir um shift nas runas
+                    print("\n")
                     print("#" * 10 + " SETTING SHIFT TO RUNES " + "#" * 10 + "\n")
                     number_shift = input("Type the number for shifting the runes:")
                     ru.set_shift_cipher(int(number_shift))

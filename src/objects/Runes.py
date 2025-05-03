@@ -12,6 +12,9 @@ class Runes:
     def __init__(self, runes_text: str):
         self.runes_text = runes_text  # variavel onde as runas vão ser armazenadas
         self.shift = 0  # obtendo quanto de shifting a pessoa vai querer nas runas
+        self.runes_sum = 0
+        self.rune_shift_text = ""
+        self.shifted_runes_sum = 0
 
     # lista das letras ; runas ; numeros correspondentes de cada runa para fazer a tradução
     alphabet: list[str] = []
@@ -41,6 +44,7 @@ class Runes:
     def decipher_rune(self):
         try:
             # resetando as variaveis antes de inserir algo nelas
+            self.rune_shift_text = ""
             self.translated_text = ""
             self.translated_text_without_shift = ""
             # obtendo o valor de cada runa no texto inserido!
@@ -61,6 +65,11 @@ class Runes:
                         Runes.alphabet[rune_index + self.shift]
                         if rune_index + self.shift <= 28
                         else Runes.alphabet[(rune_index + self.shift) % 28]
+                    )
+                    self.rune_shift_text += (
+                        Runes.runes[rune_index + self.shift]
+                        if rune_index + self.shift <= 28
+                        else Runes.runes[(rune_index + self.shift) % 28]
                     )
                     # adicionar esses valores na variavel de texto
                     self.translated_text_without_shift += Runes.alphabet[rune_index]
@@ -87,10 +96,24 @@ class Runes:
             raise e
 
     def sum_gematria_values(self):
-        # WIP
+        self.runes_sum = 0
+        self.shifted_runes_sum = 0
         for r in self.runes_text:
             if r.strip() in Runes.runes:
-                rune_index = Runes.rune.index(r)
+                rune_index = Runes.runes.index(r)
+                self.runes_sum += int(Runes.primus[rune_index])
+            elif r.strip() == "•":
+                continue
+        for r in self.rune_shift_text:
+            if r.strip() in Runes.runes:
+                rune_index = Runes.runes.index(r)
+                self.shifted_runes_sum += int(Runes.primus[rune_index])
+            elif r.strip() == "•":
+                continue
+        print(f"The original text gematria sum is equals to:{self.runes_sum}\n")
+        print(
+            f"The shifted text gematria sum is equals to:{self.shifted_runes_sum}\n"
+        ) if self.shift != 0 else print("No shift included!\n")
 
     def set_shift_cipher(self, shift_num):
         # auto-explicativo

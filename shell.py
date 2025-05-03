@@ -92,7 +92,9 @@ try:
                 case "!st":
                     # exibir as runas e to texto traduzido
                     ru.show_entered_text()
-
+                case "!gs":
+                    print("#" * 10 + " GEMATRIA SUM " + "#" * 10 + "\n")
+                    ru.sum_gematria_values()
                 case _:
                     print("command not founded")
 except Exception as e:
